@@ -1,3 +1,11 @@
-node_modules/
+# Logs
+*.log
+
+# Dependency directory
+node_modules
+
+# Development directory
 .vscode/
+
+# Release directory
 lib

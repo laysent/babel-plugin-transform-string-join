@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "jsnext:main": "lib/index.js",
   "scripts": {
-    "build": "babel src --out-dir lib --presets es2015 --source-maps",
+    "build": "babel src --out-dir lib --presets es2015",
     "prepublish": "npm run build",
     "test": "jasmine JASMINE_CONFIG_PATH=./jasmine.json ./test/index.js"
   },

@@ -48,7 +48,7 @@ const html = `<div class=${className}><span>Hello World</span></div>`;
 ## Installation
 
 ```sh
-$ npm install babel-plugin-transform-string-join
+$ npm install transform-string-join
 ```
 
 ## Usage
@@ -59,20 +59,24 @@ $ npm install babel-plugin-transform-string-join
 
 ```json
 {
-  "plugins": ["babel-plugin-transform-string-join"]
+  "plugins": ["transform-string-join"]
 }
 ```
 
 ### Via CLI
 
 ```sh
-$ babel --plugins babel-plugin-transform-string-join script.js
+$ babel --plugins transform-string-join script.js
 ```
 
 ### Via Node API
 
 ```javascript
 require('babel-core').transform('code', {
-  plugins: ['babel-plugin-transform-string-join']
+  plugins: ['transform-string-join']
 });
 ```
+
+## License
+
+MIT
