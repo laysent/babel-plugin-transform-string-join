@@ -1,0 +1,16 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "rules": {
+    "valid-jsdoc": [
+      "error", {
+        "requireReturn": false
+      }
+    ]
+   },
+  "env": {
+    "es6": true,
+    "node": true,
+    "jasmine": true
+  }
+}

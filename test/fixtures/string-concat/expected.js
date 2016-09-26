@@ -1,0 +1,1 @@
+const stringConcat = '123';
