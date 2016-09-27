@@ -1,5 +1,7 @@
 # babel-plugin-transform-string-join
 
+[![Build Status](https://travis-ci.org/laysent/babel-plugin-transform-string-join.svg?branch=master)](https://travis-ci.org/laysent/babel-plugin-transform-string-join)
+
 Babel plugin that will join strings and template strings in compilation time whenever it's possible.
 
 ## Examples
