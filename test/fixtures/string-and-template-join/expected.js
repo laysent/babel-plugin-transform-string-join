@@ -1,1 +1,1 @@
-const mixStringAndTemplate = `<div>,<div>${ strings }</div>,</div>`;
+const mixStringAndTemplate = `<div>,<div>${strings}</div>,</div>`;

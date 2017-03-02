@@ -1,4 +1,4 @@
-const nonStringConcat = 1 + '2' + `${ 3 }right`;
+const nonStringConcat = 1 + '2' + `${3}right`;
 
 const numberAdd = 1 + 2;
 
@@ -11,3 +11,7 @@ const array = ['1', '2', '3'];
 const otherThanStrings = ['1', 2, '3'].join();
 
 const notJoinCall = ['1', '2', '3'].concat();
+
+console.log('hello');
+
+alert('world');

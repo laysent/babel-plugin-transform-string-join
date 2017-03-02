@@ -95,7 +95,6 @@ module.exports = function () {
     visitor: {
       CallExpression(path) {
         const callee = path.get('callee');
-        const elements = path.get('callee.object.elements');
         if (!callee) {
           return;
         }
@@ -105,7 +104,7 @@ module.exports = function () {
         if (!t.isMemberExpression(path.get('callee')) ||
           !t.isArrayExpression(path.get('callee.object')) ||
           path.get('callee.property.name').node !== 'join' ||
-          !elements.every(validateElement)) {
+          !path.get('callee.object.elements').every(validateElement)) {
           return;
         }
         /** Skip all .join calls if given parameter is not a string */
@@ -117,11 +116,12 @@ module.exports = function () {
           path.node.arguments[0] :
           t.StringLiteral(',');
         /** Deal with arrays where template string contains */
-        const element = elements.reduce((node, _element) =>
-          stringConcat(
-            stringConcat(getBinaryExpressionValue(node), spliter),
-            getBinaryExpressionValue(_element.node))
-          );
+        const element = path.get('callee.object.elements')
+          .reduce((node, _element) =>
+            stringConcat(
+              stringConcat(getBinaryExpressionValue(node), spliter),
+              getBinaryExpressionValue(_element.node))
+            );
         path.replaceWith(element);
         return;
       },

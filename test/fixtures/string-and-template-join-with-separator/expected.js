@@ -1,1 +1,1 @@
-const mixStringAndTemplateWithJoinChar = `one.two${ 2 }two.three`;
+const mixStringAndTemplateWithJoinChar = `one.two${2}two.three`;
