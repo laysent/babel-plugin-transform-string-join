@@ -50,7 +50,7 @@ const html = `<div class=${className}><span>Hello World</span></div>`;
 ## Installation
 
 ```sh
-$ npm install transform-string-join
+$ npm install babel-plugin-transform-string-join
 ```
 
 ## Usage
