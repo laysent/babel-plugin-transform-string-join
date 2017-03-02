@@ -31,7 +31,7 @@ function stringConcat(_first, _second) {
     const quasis = second.quasis.slice(0);
     quasis[0] = t.templateElement({
       raw: first.value + value.raw,
-      cooked: first.vlaue + value.cooked,
+      cooked: first.value + value.cooked,
     });
     return t.templateLiteral(quasis, second.expressions.slice(0));
   }

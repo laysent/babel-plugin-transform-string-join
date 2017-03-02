@@ -26,7 +26,21 @@ describe('String Join Plugin', () => {
     });
   });
 
-  it('Should not handle cases', () => {
+  it(`should concat string and template correctly in es2015`, () => {
+    const caseName = 'concat-string-and-template';
+    const fixtureDir = path.join(fixturesDir, caseName);
+    const actualPath = path.join(fixtureDir, 'actual.js');
+    const actual = transformFileSync(actualPath, {
+      plugins: ['transform-es2015-template-literals', plugin],
+    }).code.replace(/['"]/g, '"');
+
+    const expected = transformFileSync(path.join(fixtureDir, 'expected.js'), {
+      plugins: ['transform-es2015-template-literals'],
+    }).code.replace(/['"]/g, '"');
+
+    expect(trim(actual)).toEqual(trim(expected));
+  });
+  it('should not handle cases', () => {
     const actual = transformFileSync(path.join(fixturesDir, 'should-not-handle-cases.js'), {
       plugins: [plugin],
     }).code;
