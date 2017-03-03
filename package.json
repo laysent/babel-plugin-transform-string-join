@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-transform-string-join",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Babel plugin that join strings and template strings in compilation when possible",
   "main": "lib/index.js",
   "jsnext:main": "lib/index.js",
