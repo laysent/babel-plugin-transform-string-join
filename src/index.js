@@ -116,12 +116,18 @@ module.exports = function () {
           path.node.arguments[0] :
           t.StringLiteral(',');
         /** Deal with arrays where template string contains */
-        const element = path.get('callee.object.elements')
-          .reduce((node, _element) =>
-            stringConcat(
-              stringConcat(getBinaryExpressionValue(node), spliter),
-              getBinaryExpressionValue(_element.node))
-            );
+        const elements = path.get('callee.object.elements');
+        let element;
+        if (elements.length === 0) {
+          element = t.stringLiteral('');
+        } else {
+          element = elements
+            .reduce((node, _element) =>
+              stringConcat(
+                stringConcat(getBinaryExpressionValue(node), spliter),
+                getBinaryExpressionValue(_element.node))
+              );
+        }
         path.replaceWith(element);
         return;
       },
